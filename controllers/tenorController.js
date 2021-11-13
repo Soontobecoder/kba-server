@@ -1,8 +1,12 @@
-const { Tenor } = require('../models/index')
+const { Tenor, Product } = require('../models/index')
 
 class TenorController {
     static list (req, res, next) {
-        Tenor.findAll()
+        Tenor.findAll({
+            // include: [{
+            //     model: Product
+            // }]
+        })
         .then(data => {
             res.status(200).json(data)
         })
