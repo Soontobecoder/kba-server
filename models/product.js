@@ -95,6 +95,20 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    jenisMotor: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Jenis Motor is required'
+        },
+        notNull: {
+          args: true,
+          msg: 'Jenis Motor is required'
+        }
+      }
+    },
     tipeMesin: DataTypes.STRING,
     volumeLangkah: DataTypes.STRING,
     sistemSuplaiBahanBakar: DataTypes.STRING,
